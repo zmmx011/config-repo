@@ -1,0 +1,31 @@
+# Default settings
+spring:
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mariadb://localhost:3306/license?characterEncoding=UTF-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: root
+example:
+  profile: "Current profile is default"
+
+---
+# Development settings
+spring:
+  config:
+    activate:
+      on-profile: dev
+example:
+  profile: "Current profile is dev"
+---
+# Product settings
+spring:
+  config:
+    activate:
+      on-profile: prod
+example:
+  profile: "Current profile is prod"
