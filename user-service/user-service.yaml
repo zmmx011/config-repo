@@ -9,7 +9,7 @@ spring:
     url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV?characterEncoding=UTF-8"
     driver-class-name: "org.mariadb.jdbc.Driver"
     username: "e1264"
-    password: "{cipher}3cc4000c4a6c55c10f793abf5955e935f3707ed9f8e60525426642e75bfae08d"
+    password: "{cipher}09c495e08d694d4a875c33eb662425fb8017b268a823f99c69342fb7625b6a78"
 example:
   profile: "Current profile is default"
 
