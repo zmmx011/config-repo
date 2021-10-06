@@ -6,9 +6,9 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: "jdbc:mariadb://100.100.15.82:3306/license?characterEncoding=UTF-8"
+    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV?characterEncoding=UTF-8"
     driver-class-name: "org.mariadb.jdbc.Driver"
-    username: "root"
+    username: "e1264"
     password: "{cipher}3cc4000c4a6c55c10f793abf5955e935f3707ed9f8e60525426642e75bfae08d"
 example:
   profile: "Current profile is default"
