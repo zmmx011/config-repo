@@ -2,7 +2,7 @@
 spring:
   jpa:
     show-sql: true
-    generate-ddl: true
+    generate-ddl: false
     hibernate:
       ddl-auto: none
   datasource:
