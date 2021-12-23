@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:15.0.2
+    restart: on-failure
+    ports:
+      - "4080:8080"
+    networks:
+      internal_net:
+        aliases:
+          - keycloak
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    environment:
+      # Admin account
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+      KEYCLOAK_FRONTEND_URL: "https://sso.inveniacorp.com:8080/auth/"
+      PROXY_ADDRESS_FORWARDING: "true"
+      # DB
+      DB_VENDOR: mariadb
+      DB_ADDR: 100.100.10.177
+      DB_PORT: 3306
+      DB_DATABASE: keycloak_dev
+      DB_USER: e1264
+      DB_PASSWORD: inveni@2020
+    command:
+      - "-b"
+      - "0.0.0.0"
+
+networks:
+  internal_net:
+    driver: overlay
+    attachable: true

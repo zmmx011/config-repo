@@ -1,0 +1,81 @@
+version: '3.8'
+services:
+  eurekaserver:
+    image: kds.inveniacorp.com/dev/msa-base/eureka-server:latest
+    restart: on-failure
+    ports:
+      - "8761:8761"
+    networks:
+      - msa
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
+    build:
+      context: ./eureka-server
+
+  configserver:
+    image: kds.inveniacorp.com/dev/msa-base/config-server:latest
+    restart: on-failure
+    ports:
+      - "8888:8888"
+    networks:
+      - msa
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
+    environment:
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT: "8761"
+      ENCRYPT_KEY: "damu"
+    build:
+      context: ./config-server
+    depends_on:
+      - eurekaserver
+
+  apigateway:
+    image: kds.inveniacorp.com/dev/msa-base/api-gateway:latest
+    restart: on-failure
+    ports:
+      - "4000:8000"
+    networks:
+      - msa
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.25'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          memory: 128M
+    environment:
+      KEYCLOAK_URI: "https://sso.inveniacorp.com:8080/auth" # 호스트 주소
+      KEYCLOAK_REALM: "service"
+      KEYCLOAK_REDIRECT_URI: "https://apigw.inveniacorp.com" # 게이트웨이 주소
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT: "8761"
+      ENCRYPT_KEY: "damu"
+
+    build:
+      context: ./api-gateway
+    depends_on:
+      - eurekaserver
+    extra_hosts:
+      - "sso.inveniacorp.com: 100.100.10.174"
+
+networks:
+  msa:
+    external: true
+    name: msa
