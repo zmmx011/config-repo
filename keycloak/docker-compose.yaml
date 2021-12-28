@@ -6,9 +6,7 @@ services:
     ports:
       - "4080:8080"
     networks:
-      internal_net:
-        aliases:
-          - keycloak
+      - msa
     deploy:
       replicas: 1
       resources:
@@ -36,6 +34,6 @@ services:
       - "0.0.0.0"
 
 networks:
-  internal_net:
-    driver: overlay
-    attachable: true
+  msa:
+    external: true
+    name: msa
