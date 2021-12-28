@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  #internal-web:
+  nginx:
+    image: kds.inveniacorp.com/dev/internal-web/internal-web:latest
+    volumes:
+      #- "/var/lib/docker/volumes/nginx/logs:/logs"
+      - /www/internal-web/ssl:/www/internal-web/ssl
+
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+      - target: 8000
+        published: 8000
+        protocol: tcp
+      - target: 8080
+        published: 8080
+        protocol: tcp
+    deploy:
+      mode: global
+      #replicas: 3
+      resources:
+        limits:
+          cpus: '0.25'
+          #cpus: '0.50'
+          memory: 512M
+        reservations:
+          cpus: '0.10'
+          #cpus: '0.20'
+          memory: 128M
+      placement:
+        constraints: [node.platform.os == linux]
