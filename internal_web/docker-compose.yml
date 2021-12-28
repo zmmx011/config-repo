@@ -32,3 +32,9 @@ services:
           memory: 128M
       placement:
         constraints: [node.platform.os == linux]
+    networks:
+      - msa
+networks:
+  msa:
+    external: true
+    name: msa
