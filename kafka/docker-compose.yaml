@@ -80,8 +80,6 @@ services:
       - zookeeper
       - kafka
     restart: on-failure
-    ports:
-      - "30001:9000"
     environment:
       ZK_HOSTS: "zookeeper:2181"
       APPLICATION_SECRET: "random-secret"

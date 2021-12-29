@@ -19,13 +19,9 @@ spring:
   config:
     activate:
       on-profile: dev
-example:
-  profile: "Current profile is dev"
 ---
 # Product settings
 spring:
   config:
     activate:
       on-profile: prod
-example:
-  profile: "Current profile is prod"
