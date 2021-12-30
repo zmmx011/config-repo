@@ -1,5 +1,17 @@
 # Default settings
+
+---
+# Development settings
 spring:
+  config:
+    activate:
+      on-profile: dev
+---
+# Product settings
+spring:
+  config:
+    activate:
+      on-profile: prod
   jpa:
     show-sql: true
     generate-ddl: false
@@ -10,28 +22,3 @@ spring:
     driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
     username: "genuine"
     password: "{cipher}0ca73e5fe38d5bcef4faaa4a8e76ec262d18273e3e6b846cc9009490f70ebe2f"
-example:
-  profile: "Current profile is default"
-
----
-# Development settings
-spring:
-  config:
-    activate:
-      on-profile: dev
-  jpa:
-    show-sql: true
-    generate-ddl: false
-    hibernate:
-      ddl-auto: none
-  datasource:
-    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV"
-    driver-class-name: "org.mariadb.jdbc.Driver"
-    username: "e1264"
-    password: "inveni@2020"
----
-# Product settings
-spring:
-  config:
-    activate:
-      on-profile: prod
