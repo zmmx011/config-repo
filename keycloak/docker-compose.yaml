@@ -17,6 +17,7 @@ services:
           cpus: '0.25'
           memory: 256M
     environment:
+      TZ: "Asia/Seoul"
       # Admin account
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
