@@ -38,7 +38,7 @@ spring:
     username: "genuine"
     password: "{cipher}0ca73e5fe38d5bcef4faaa4a8e76ec262d18273e3e6b846cc9009490f70ebe2f"
 keycloak:
-  auth-server-url: "https://sso.inveniacorp.com:8080/auth"
+  auth-server-url: "keycloak:8080/auth"
   realm: "service"
   client-id: "admin-cli"
   client-secret: "GefnvC2flJEwe8FIm1YjreTjVZKQEFFb"
