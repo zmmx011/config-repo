@@ -7,15 +7,6 @@ services:
       - "8761:8761"
     networks:
       - msa
-    deploy:
-      replicas: 1
-      resources:
-        limits:
-          cpus: '0.25'
-          memory: 512M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
     environment:
       TZ: "Asia/Seoul"
     build:
@@ -28,15 +19,6 @@ services:
       - "8888:8888"
     networks:
       - msa
-    deploy:
-      replicas: 1
-      resources:
-        limits:
-          cpus: '0.25'
-          memory: 512M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
     environment:
       TZ: "Asia/Seoul"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
@@ -54,15 +36,6 @@ services:
       - "4000:8000"
     networks:
       - msa
-    deploy:
-      replicas: 1
-      resources:
-        limits:
-          cpus: '0.25'
-          memory: 512M
-        reservations:
-          cpus: '0.10'
-          memory: 128M
     environment:
       TZ: "Asia/Seoul"
       KEYCLOAK_URI: "https://sso.inveniacorp.com:8080/auth" # 호스트 주소
