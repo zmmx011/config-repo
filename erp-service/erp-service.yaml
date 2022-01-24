@@ -12,10 +12,10 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: "jdbc:sqlserver://100.100.10.72:10002;database=INVENIA"
-    driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-    username: "genuine"
-    password: "{cipher}0ca73e5fe38d5bcef4faaa4a8e76ec262d18273e3e6b846cc9009490f70ebe2f"
+    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV"
+    driver-class-name: "org.mariadb.jdbc.Driver"
+    username: "e1264"
+    password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
 keycloak:
   auth-server-url: "https://sso.inveniacorp.com:8080/auth"
   realm: "service"
@@ -33,10 +33,10 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: "jdbc:sqlserver://100.100.10.192:14233;database=INVENIA"
-    driver-class-name: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-    username: "genuine"
-    password: "{cipher}0ca73e5fe38d5bcef4faaa4a8e76ec262d18273e3e6b846cc9009490f70ebe2f"
+    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV"
+    driver-class-name: "org.mariadb.jdbc.Driver"
+    username: "e1264"
+    password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
 keycloak:
   auth-server-url: "http://100.100.10.174:4080/auth"
   realm: "service"
