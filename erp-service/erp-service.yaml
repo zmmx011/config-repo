@@ -12,7 +12,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV"
+    url: "jdbc:mariadb://100.100.10.177:3306/invenia_erp"
     driver-class-name: "org.mariadb.jdbc.Driver"
     username: "e1264"
     password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
@@ -33,7 +33,7 @@ spring:
     hibernate:
       ddl-auto: none
   datasource:
-    url: "jdbc:mariadb://100.100.10.177:3306/INVENIA_DEV"
+    url: "jdbc:mariadb://100.100.10.177:3306/invenia_erp"
     driver-class-name: "org.mariadb.jdbc.Driver"
     username: "e1264"
     password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
