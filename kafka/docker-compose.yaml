@@ -70,6 +70,7 @@ services:
       CONNECT_PLUGIN_PATH: "/usr/share/java,/etc/kafka-connect/jars"
       CONNECT_LOG4J_LOGGERS: org.apache.zookeeper=ERROR,org.I0Itec.zkclient=ERROR,org.reflections=ERROR
     volumes:
+      - /data/altibase:/usr/share/java
       - /data/confluent/connect/confluentinc-kafka-connect-jdbc-10.2.5/lib:/etc/kafka-connect/jars
       - /data/confluent/connect/jre:/etc/alternatives/jre
     networks:
