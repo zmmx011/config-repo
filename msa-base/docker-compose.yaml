@@ -55,4 +55,5 @@ services:
 networks:
   msa:
     external: true
+
     name: msa
