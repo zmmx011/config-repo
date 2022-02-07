@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-  erpservice:
+  gwservice:
     image: kds.inveniacorp.com/dev/gw-service/gw-service:latest
     restart: on-failure
     ports:
