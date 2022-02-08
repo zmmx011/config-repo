@@ -1,6 +1,3 @@
-# Default settings
-
----
 # Development settings
 spring:
   config:
@@ -21,6 +18,8 @@ keycloak:
   realm: "service"
   client-id: "admin-cli"
   client-secret: "GefnvC2flJEwe8FIm1YjreTjVZKQEFFb"
+test:
+  name: rabbitmq
 ---
 # Product settings
 spring:
