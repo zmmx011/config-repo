@@ -22,5 +22,3 @@ spring:
     driver-class-name: "Altibase.jdbc.driver.AltibaseDriver"
     username: "g2"
     password: "{cipher}8437ea7b287ebba1eea255d24edf2164a27e1d7bb7882cddecf40c7fea4720ec"
-test:
-  version: test1
