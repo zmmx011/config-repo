@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak:16.1.0
+    image: zmmx011/keycloak-theme:latest
     restart: on-failure
     ports:
       - "4080:8080"
@@ -11,7 +11,7 @@ services:
       TZ: "Asia/Seoul"
       # Admin account
       KEYCLOAK_USER: admin
-      KEYCLOAK_PASSWORD: inveni@2021
+      KEYCLOAK_PASSWORD: admin
       KEYCLOAK_FRONTEND_URL: "https://sso.inveniacorp.com:8080/auth/"
       PROXY_ADDRESS_FORWARDING: "true"
       # DB
