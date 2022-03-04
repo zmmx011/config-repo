@@ -21,7 +21,7 @@ jobs:
       with:
         registry: kds.inveniacorp.com
         username: ${{ github.repository_owner }}
-        password: ${{ secrets.TOKEN }}
+        password: ${{ secrets.PACKAGE }}
     - name: Build the Docker image
       run: docker build ./internal_web --file ./internal_web/Dockerfile --tag kds.inveniacorp.com/${{ github.repository }}/internal-web:latest
     - name: Docker Push
