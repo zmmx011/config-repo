@@ -21,6 +21,6 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.TOKEN }}
     - name: Build the Docker image
-      run: docker build ./internal_web --file Dockerfile --tag kds.inveniacorp.com/${{ github.repository }}/internal-web:latest
+      run: docker build ./internal_web --file ./internal_web/Dockerfile --tag kds.inveniacorp.com/${{ github.repository }}/internal-web:latest
     - name: Docker Push
       run: docker push kds.inveniacorp.com/${{ github.repository }}/internal-web:latest
