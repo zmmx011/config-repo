@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   nginx:
-    image: kds.inveniacorp.com/dev/internal-web/internal-web:latest
+    image: kds.inveniacorp.com/dev/config-repo/internal-web:latest
     volumes:
       - /www/internal-web/ssl:/www/internal-web/ssl
     ports:
