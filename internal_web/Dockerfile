@@ -1,8 +1,7 @@
 FROM nginx
 COPY nginx.conf /etc/nginx/nginx.conf
-#COPY ssl/private.key /www/internal-web/ssl/private.key
-#COPY ssl/public.crt /www/internal-web/ssl/public.crt
-COPY ssl/private.key /www/internal-web/ssl2/private.key
+COPY ssl/public.crt /www/internal-web/ssl/public.crt
+COPY ssl/private.key /www/internal-web/ssl/private.key
 
 
 ### TimeZone 환경 변수 지정
