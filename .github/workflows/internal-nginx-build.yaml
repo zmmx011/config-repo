@@ -1,0 +1,26 @@
+name: Internal Web Build Action
+
+on:
+  push:
+    paths:
+      - "internal_web/nginx.conf"
+
+jobs:
+
+  build:
+
+    runs-on: [ self-hosted ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login Docker
+      if: github.event_name != 'pull_request'
+      uses: actions/login-action@v1.10.0
+      with:
+        registry: kds.inveniacorp.com
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.TOKEN }}
+    - name: Build the Docker image
+      run: docker build ./internal_web --file Dockerfile --tag kds.inveniacorp.com/${{ github.repository }}/internal-web:latest
+    - name: Docker Push
+      run: docker push kds.inveniacorp.com/${{ github.repository }}/internal-web:latest

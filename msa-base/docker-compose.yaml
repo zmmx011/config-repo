@@ -33,20 +33,17 @@ services:
   apigateway:
     image: kds.inveniacorp.com/dev/msa-base/api-gateway:latest
     restart: on-failure
-    ports:
-      - "4000:8000"
     networks:
       - msa
     environment:
       TZ: "Asia/Seoul"
       RABBITMQ_HOST: "rabbitmq"
-      KEYCLOAK_URI: "https://sso.inveniacorp.com:8080/auth" # 호스트 주소
+      KEYCLOAK_URI: "https://sso.inveniacorp.com/auth" # 호스트 주소
       KEYCLOAK_REALM: "service"
       KEYCLOAK_REDIRECT_URI: "https://apigw.inveniacorp.com" # 게이트웨이 주소
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY: "damu"
-
     build:
       context: ./api-gateway
     depends_on:

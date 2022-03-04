@@ -4,21 +4,12 @@ services:
   nginx:
     image: kds.inveniacorp.com/dev/internal-web/internal-web:latest
     volumes:
-      #- "/var/lib/docker/volumes/nginx/logs:/logs"
       - /www/internal-web/ssl:/www/internal-web/ssl
     ports:
-      - target: 80
-        published: 80
-        protocol: tcp
-      - target: 443
-        published: 443
-        protocol: tcp
-      - target: 8000
-        published: 8000
-        protocol: tcp
-      - target: 8080
-        published: 8080
-        protocol: tcp
+      - "80:80"
+      - "443:443"
+      - "8000:8000"
+      - "8080:8080"
     deploy:
       mode: global
       placement:
