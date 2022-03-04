@@ -3,8 +3,6 @@ version: '3.8'
 services:
   nginx:
     image: kds.inveniacorp.com/dev/config-repo/internal-web:latest
-    volumes:
-      - /www/internal-web/ssl:/www/internal-web/ssl
     ports:
       - "80:80"
       - "443:443"
