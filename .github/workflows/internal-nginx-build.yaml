@@ -3,7 +3,9 @@ name: Internal Web Build Action
 on:
   push:
     paths:
+      - ".github/workflows/internal-nginx-build.yaml"
       - "internal_web/nginx.conf"
+      - "internal_web/Dockerfile"
 
 jobs:
 
