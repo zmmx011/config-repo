@@ -3,8 +3,6 @@ services:
   keycloak:
     image: zmmx011/keycloak-theme:latest
     restart: on-failure
-    ports:
-      - "4080:8080"
     networks:
       - msa
     environment:
