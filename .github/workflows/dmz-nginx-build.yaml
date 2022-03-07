@@ -1,0 +1,29 @@
+name: Internal Web Build Action
+
+on:
+  push:
+    paths:
+      - ".github/workflows/dmz-nginx-build.yaml"
+      - "dmz-web/nginx.conf"
+      - "dmz-web/server-https-common.conf"
+      - "dmz-web/Dockerfile"
+
+jobs:
+
+  build:
+
+    runs-on: [ self-hosted ]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login Docker
+      if: github.event_name != 'pull_request'
+      uses: actions/login-action@v1.10.0
+      with:
+        registry: kds.inveniacorp.com
+        username: ${{ github.repository_owner }}
+        password: ${{ secrets.PACKAGE }}
+    - name: Build the Docker image
+      run: docker build ./dmz-web --file ./dmz-web/Dockerfile --tag kds.inveniacorp.com/${{ github.repository }}/dmz-web:latest
+    - name: Docker Push
+      run: docker push kds.inveniacorp.com/${{ github.repository }}/dmz-web:latest
