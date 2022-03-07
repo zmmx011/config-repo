@@ -1,4 +1,4 @@
-name: Internal Web Build Action
+name: DMZ Web Build Action
 
 on:
   push:
