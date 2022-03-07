@@ -48,6 +48,8 @@ services:
       context: ./api-gateway
     depends_on:
       - eurekaserver
+    extra_hosts:
+      - "sso.inveniacorp.com: 100.100.10.174"
 
 networks:
   msa:
