@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   keycloak:
-    image: kds.inveniacorp.com/keycloak-theme/keycloak:latest
+    image: kds.inveniacorp.com/dev/keycloak-theme/keycloak:latest
     restart: on-failure
     networks:
       - msa
