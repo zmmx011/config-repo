@@ -19,8 +19,6 @@ services:
       DB_DATABASE: keycloak_dev
       DB_USER: e1264
       DB_PASSWORD: inveni@2020
-    volumes:
-      - /data/nfs/keycloak-theme:/opt/jboss/keycloak/standalone/deployments
     command:
       - "-b"
       - "0.0.0.0"
