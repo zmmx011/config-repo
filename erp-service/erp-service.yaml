@@ -14,7 +14,7 @@ spring:
     username: "e1264"
     password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
 keycloak:
-  auth-server-url: "https://sso.inveniacorp.com:8080/auth"
+  auth-server-url: "https://sso.inveniacorp.com/auth"
   realm: "service"
   client-id: "admin-cli"
   client-secret: "GefnvC2flJEwe8FIm1YjreTjVZKQEFFb"
@@ -37,7 +37,7 @@ spring:
     username: "e1264"
     password: "{cipher}cff26331e887aff119cd77b6c5acc52d60d1d42bf73e2c0e7362a6faa17a4df4"
 keycloak:
-  auth-server-url: "http://100.100.10.174:4080/auth"
+  auth-server-url: "http://100.100.10.174:8080/auth"
   realm: "service"
   client-id: "admin-cli"
   client-secret: "GefnvC2flJEwe8FIm1YjreTjVZKQEFFb"
