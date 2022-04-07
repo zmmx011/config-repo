@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  gwservice:
+    image: kds.inveniacorp.com/dev/portal-service/portal-service:latest
+    restart: on-failure
+    ports:
+      - "8012:8012"
+    environment:
+      TZ: "Asia/Seoul"
+      RABBITMQ_HOST: "rabbitmq"
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: "8012"
+      EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
+      EUREKASERVER_PORT: "8761"
+      CONFIGSERVER_URI: "http://configserver:8888"
+      CONFIGSERVER_PORT: "8888"
+      ENCRYPT_KEY: "damu"
+    build:
+      context: .
+    networks:
+      - msa
+networks:
+  msa:
+    external: true
+    name: msa
