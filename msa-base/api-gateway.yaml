@@ -1,21 +1,23 @@
 # Route Config
-gateway:
-  routes:
-    - id: erp-service
-      uri: lb://ERP-SERVICE
-      predicates:
-        - Path=/erp-service/**
-      filters:
-        - RemoveRequestHeader=Cookie
-    - id: user-service
-      uri: lb://GW-SERVICE
-      predicates:
-        - Path=/gw-service/**
-      filters:
-        - RemoveRequestHeader=Cookie
-    - id: portal-service
-      uri: lb://PORTAL-SERVICE
-      predicates:
-        - Path=/portal-service/**
-      filters:
-        - RemoveRequestHeader=Cookie
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: erp-service
+          uri: lb://ERP-SERVICE
+          predicates:
+            - Path=/erp-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: user-service
+          uri: lb://GW-SERVICE
+          predicates:
+            - Path=/gw-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
+        - id: portal-service
+          uri: lb://PORTAL-SERVICE
+          predicates:
+            - Path=/portal-service/**
+          filters:
+            - RemoveRequestHeader=Cookie
