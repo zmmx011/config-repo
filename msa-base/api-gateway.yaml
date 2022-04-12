@@ -2,8 +2,6 @@
 spring:
   cloud:
     gateway:
-      default-filters:
-        - TokenRelay
       routes:
         - id: erp-service
           uri: lb://ERP-SERVICE
