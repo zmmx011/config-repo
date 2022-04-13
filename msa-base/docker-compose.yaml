@@ -38,16 +38,15 @@ services:
     environment:
       TZ: "Asia/Seoul"
       RABBITMQ_HOST: "rabbitmq"
-      KEYCLOAK_URI: "https://sso.inveniacorp.com/auth" # 호스트 주소
-      KEYCLOAK_REALM: "service"
-      KEYCLOAK_REDIRECT_URI: "https://apigw.inveniacorp.com" # 게이트웨이 주소
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
       EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY: "damu"
+      CONFIGSERVER_URI: "http://configserver:8888"
     build:
       context: ./api-gateway
     depends_on:
       - eurekaserver
+      - configserver
     extra_hosts:
       - "sso.inveniacorp.com: 100.100.10.174"
 
