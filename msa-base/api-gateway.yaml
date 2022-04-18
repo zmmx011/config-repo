@@ -9,7 +9,7 @@ spring:
             - Path=/erp-service/**
           filters:
             - RemoveRequestHeader=Cookie
-        - id: user-service
+        - id: gw-service
           uri: lb://GW-SERVICE
           predicates:
             - Path=/gw-service/**
