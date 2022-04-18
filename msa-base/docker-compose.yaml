@@ -48,7 +48,7 @@ services:
       - eurekaserver
       - configserver
     extra_hosts:
-      - "sso.inveniacorp.com: 100.100.10.174"
+      - "sso.inveniacorp.com: 100.100.10.174:8080"
 
 networks:
   msa:
