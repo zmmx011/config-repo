@@ -32,6 +32,8 @@ services:
   apigateway:
     image: kds.inveniacorp.com/dev/msa-base/api-gateway:latest
     restart: on-failure
+    ports:
+      - "8000:8000"
     networks:
       - msa
     environment:
