@@ -23,7 +23,6 @@ services:
       TZ: "Asia/Seoul"
       RABBITMQ_HOST: "rabbitmq"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY: "damu"
     build:
       context: ./config-server
@@ -33,13 +32,14 @@ services:
   apigateway:
     image: kds.inveniacorp.com/dev/msa-base/api-gateway:latest
     restart: on-failure
+    ports:
+      - "8000:8000"
     networks:
       - msa
     environment:
       TZ: "Asia/Seoul"
       RABBITMQ_HOST: "rabbitmq"
       EUREKASERVER_URI: "http://eurekaserver:8761/eureka/"
-      EUREKASERVER_PORT: "8761"
       ENCRYPT_KEY: "damu"
       CONFIGSERVER_URI: "http://configserver:8888"
     build:
