@@ -11,7 +11,6 @@ services:
       KEYCLOAK_USER: admin
       KEYCLOAK_PASSWORD: admin
       KEYCLOAK_FRONTEND_URL: "https://sso.inveniacorp.com/auth/"
-      PROXY_ADDRESS_FORWARDING: "true"
       # DB
       DB_VENDOR: mariadb
       DB_ADDR: 100.100.10.177
